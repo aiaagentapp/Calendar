@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name         = "CalendarLib"
-	s.version      = "2.05"
+	s.version      = "2.5.1"
 	s.summary      = "A set of views and controllers for displaying and scheduling events on iOS"
 	s.homepage     = "https://github.com/wei2lee/Calendar"
 	s.license      = "MIT"
