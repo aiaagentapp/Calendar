@@ -89,6 +89,9 @@
  */
 @property (nonatomic, copy) MGCDateRange *dateRange;
 
+@property (nonatomic) CGFloat dayFontSize;
+@property (nonatomic) CGFloat cellMinimumSpacing;
+@property (nonatomic) UIEdgeInsets edgeInset;
 
 - (NSDate*)dateForMonthAtPoint:(CGPoint)pt;
 
