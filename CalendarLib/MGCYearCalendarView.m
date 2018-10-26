@@ -46,8 +46,8 @@ static const CGFloat kDefaultDayFontSize = 13;			// default font size for the da
 static const CGFloat kDefaultMonthHeaderFontSize = 20;	// default font size for the month headers
 static const CGFloat kDefaultYearHeaderFontSize = 40;	// deafult font size for the year headers
 
-//static const CGFloat kCellMinimumSpacingiPhone = 2;            // minimum distance between month cells // Make public
-//static const CGFloat kDefaultDayFontSizeiPhone = 8;            // default font size for the day ordinals // Make public
+static const CGFloat kCellMinimumSpacingiPhone = 2;			// minimum distance between month cells
+static const CGFloat kDefaultDayFontSizeiPhone = 8;			// default font size for the day ordinals
 static const CGFloat kDefaultMonthHeaderFontSizeiPhone = 12;	// default font size for the month headers
 static const CGFloat kDefaultYearHeaderFontSizeiPhone = 20;	// deafult font size for the year headers
 
@@ -115,7 +115,7 @@ static const CGFloat kDefaultYearHeaderFontSizeiPhone = 20;	// deafult font size
     }
     else{
         //NSLog(@"---------------- iPhone ------------------");
-        _daysFont = [UIFont systemFontOfSize:self.dayFontSize];
+        _daysFont = [UIFont systemFontOfSize:kDefaultDayFontSizeiPhone];
         _headerFont = [UIFont boldSystemFontOfSize:kDefaultMonthHeaderFontSizeiPhone];
     }
     
@@ -413,9 +413,9 @@ static const CGFloat kDefaultYearHeaderFontSizeiPhone = 20;	// deafult font size
     }
     else{
         //NSLog(@"---------------- iPhone ------------------");
-        self.layout.sectionInset = self.edgeInset;
-        self.layout.minimumInteritemSpacing = self.cellMinimumSpacing;
-        self.layout.minimumLineSpacing = self.cellMinimumSpacing;
+        self.layout.sectionInset = UIEdgeInsetsMake(0, 4, 0, 4);
+        self.layout.minimumInteritemSpacing = kCellMinimumSpacingiPhone;
+        self.layout.minimumLineSpacing = kCellMinimumSpacingiPhone;
     }
     
     
