@@ -41,6 +41,7 @@
 @property (nonatomic) BOOL showsMonthHeader;				// set to NO to hide the month header. Default is YES
 @property (nonatomic) BOOL showsDayHeader;					// set to NO to hide the week day header. Default is YES
 @property (nonatomic, copy) NSAttributedString *headerText; // text for the month header. Default is month followed by year (ex: May 2014)
+@property (nonatomic) UIColor *headerTextHighlightColor;
 @property (nonatomic) UIFont *daysFont;						// font for week day symbols. Default is system font with size of 13.
 @property (nonatomic) NSIndexSet *highlightedDays;			// highlighted days show a circle around the day label
 @property (nonatomic) UIColor *highlightColor;				// color of the circle for highlighted days. Default is black.
