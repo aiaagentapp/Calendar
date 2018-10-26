@@ -70,7 +70,7 @@ static const CGFloat kDefaultHeaderFontSizeiPhone = 8;
             //NSLog(@"---------------- iPhone ------------------");
             _daysFont = [UIFont systemFontOfSize:kDefaultDayFontSizeiPhone];
         }
-        _headerTextHighlightColor = [UIColor blackColor];
+        
         _highlightColor = [UIColor blackColor];
         _showsDayHeader = YES;
         _showsMonthHeader = YES;
@@ -126,12 +126,7 @@ static const CGFloat kDefaultHeaderFontSizeiPhone = 8;
         
         NSMutableParagraphStyle *para = [NSMutableParagraphStyle new];
         para.alignment = NSTextAlignmentCenter;
-        return [[NSAttributedString alloc]initWithString:s
-                                              attributes:@{
-                                                           NSFontAttributeName: font,
-                                                           NSParagraphStyleAttributeName: para,
-                                                           NSForegroundColorAttributeName : self.headerTextHighlightColor
-                                                            }];
+        return [[NSAttributedString alloc]initWithString:s attributes:@{ NSFontAttributeName: font, NSParagraphStyleAttributeName: para }];
     }
     return _headerText;
 }
