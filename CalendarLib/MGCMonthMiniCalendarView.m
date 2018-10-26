@@ -274,6 +274,7 @@ static const CGFloat kDefaultHeaderFontSizeiPhone = 8;
 		
 		CGRect cellRect = CGRectMake(x, y, dayCellSize, dayCellSize);
 		CGRect boxRect = CGRectInset(cellRect, -space / 2 + 1, -space / 2 + 1);
+		CGRect tempCellRect = cellRect;
 		
 		UIColor *bkgColor = nil;
 		if ([self.delegate respondsToSelector:@selector(monthMiniCalendarView:backgroundColorForDayAtIndex:)])
@@ -290,10 +291,13 @@ static const CGFloat kDefaultHeaderFontSizeiPhone = 8;
 			UIBezierPath* p = [UIBezierPath bezierPathWithOvalInRect:boxRect];
 			[self.highlightColor setFill];
 			[p fill];
+			
+			// Fix bug selected day "trimmed"
+            		tempCellRect.size.width += 1;
 		}
 		
 		NSMutableAttributedString *as = [self textForDayAtIndex:i cellColor:bkgColor];
-		[as drawInRect:cellRect];
+		[as drawInRect:tempCellRect];
 		
 		x += cellRect.size.width + space;
 	}
